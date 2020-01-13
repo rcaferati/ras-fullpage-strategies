@@ -59,7 +59,7 @@ const Header = () => {
   )
 }
 
-// Wrapp the aplication with the navigation Provider passing down to current page slug.
+// Wrapp the aplication with the navigation Provider passing down the current page slug.
 const App = () => {
   const slug = "[THE INITIAL RENDERED SLUG]";
 
