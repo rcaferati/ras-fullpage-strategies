@@ -3,6 +3,8 @@ React awesome slider fullpage strategies and usage examples. For more informatio
 
 ## Live preview
 Access the live preview at: [fullpage.caferati.me](https://fullpage.caferati.me)
+
+
 [<img width="600" alt="react-awesome-slider demo" src="https://github.com/rcaferati/react-awesome-slider/blob/master/demo/public/images/fullscreen.gif?raw=true">](https://fullpage.caferati.me/)
 
 The `Navigation` HOC exposes a number of methods for dealing with fullpage navigation. The code bellow is a basic concept example, if you want a functional one just check out the [NextJS example folder](https://github.com/rcaferati/ras-fullpage-strategies/tree/master/nextjs-example).
