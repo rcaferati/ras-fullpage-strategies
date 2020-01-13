@@ -1,9 +1,11 @@
 # React Awesome Slider Navigation HOC strategies
 React awesome slider fullpage strategies and usage examples. For more information about the slider itself please access the main repository at [rcaferati/react-awesome-slider](https://github.com/rcaferati/ras-fullpage-strategies)
 
+## Live preview
+Access the live preview at: [fullpage.caferati.me](https://fullpage.caferati.me)
+[<img width="600" alt="react-awesome-slider demo" src="https://github.com/rcaferati/react-awesome-slider/blob/master/demo/public/images/fullscreen.gif?raw=true">](https://fullpage.caferati.me/)
 
 The `Navigation` HOC exposes a number of methods for dealing with fullpage navigation. The code bellow is a basic concept example, if you want a functional one just check out the [NextJS example folder](https://github.com/rcaferati/ras-fullpage-strategies/tree/master/nextjs-example).
-
 
 | Method                  | Type                     | Description                                                                        |
 | :---------------------- | :----------------------- | :-------------------------------------------------------------------------------- |
