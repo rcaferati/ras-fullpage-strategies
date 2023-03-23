@@ -1,5 +1,5 @@
 # React Awesome Slider Navigation HOC strategies
-React awesome slider fullpage strategies and usage examples. For more information about the slider itself please access the main repository at [rcaferati/react-awesome-slider](https://github.com/rcaferati/ras-fullpage-strategies)
+React awesome slider fullpage strategies and usage examples. For more information about the slider itself please access the main repository at [rcaferati/react-awesome-slider](https://github.com/rcaferati/react-awesome-slider)
 
 ## Live preview
 Access the live preview at: [fullpage.caferati.me](https://fullpage.caferati.me)
