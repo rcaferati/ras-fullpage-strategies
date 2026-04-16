@@ -1,80 +1,52 @@
-# React Awesome Slider Navigation HOC strategies
-React awesome slider fullpage strategies and usage examples. For more information about the slider itself please access the main repository at [rcaferati/react-awesome-slider](https://github.com/rcaferati/ras-fullpage-strategies)
+# ras-fullpage-strategies
 
-## Live preview
-Access the live preview at: [fullpage.caferati.me](https://fullpage.caferati.me)
+Production fullpage demo application for React Awesome Slider, deployed at [fullpage.caferati.dev](https://fullpage.caferati.dev).
 
+This repository replaces the legacy `nextjs-example` implementation with a standalone Vite + React + TypeScript app while preserving the original `ras-fullpage-strategies` Git history and remote.
 
-[<img width="600" alt="react-awesome-slider demo" src="https://github.com/rcaferati/react-awesome-slider/blob/master/demo/public/images/fullscreen.gif?raw=true">](https://fullpage.caferati.me/)
+## Routes
 
-## Implementation
+The app keeps the route-shaped browser paths used by the original demo:
 
-The `Navigation` HOC exposes a number of methods for dealing with fullpage navigation. The code bellow is a basic concept example, if you want a functional one just check out the [NextJS example folder](https://github.com/rcaferati/ras-fullpage-strategies/tree/master/nextjs-example).
+- `/`
+- `/page-two`
+- `/page-three`
 
-| Method                  | Type                     | Description                                                                        |
-| :---------------------- | :----------------------- | :-------------------------------------------------------------------------------- |
-| Provider                |  `Context Provider`      | A context provider component for the application to be wrapped in.                |
-| withNavigationContext   |  `Context Consumer`      | A navigation context consumer for accessing the navigation object as a prop.      |
-| withNavigationHandlers  |  `Navigation Handlers`   | A HOC to add the navigation handlers to your AwesomeSlider instance.              |
-| Link                    |  `Link Component`        | A Link component for handling page linking.                                        |
+The slider navigation remains the single source of truth for transitions, while the browser URL is kept in sync for direct loads and history navigation.
 
-```JS
-import AwesomeSlider from "react-awesome-slider"
-import 'react-awesome-slider/dist/styles.css';
+## Stack
 
-import { 
-  Provider,
-  Link,
-  withNavigationContext,
-  withNavigationHandlers
-} from "react-awesome-slider/dist/navigation";
+- React 18
+- Vite
+- TypeScript
+- Vitest + Testing Library
+- Published npm packages only:
+  - `@rcaferati/react-awesome-slider`
+  - `@rcaferati/react-awesome-button`
 
-// Wrapp the AwesomeSlider component with the navigationHandlers
-const NavigationSlider = withNavigationHandlers(AwesomeSlider);
+## Scripts
 
-// Create an AwesomeSlider instance with some content
-const Slider = () => {
-  return (
-    <NavigationSlider
-      className="awesome-slider"
-      media={[
-        {
-          slug: "page-one",
-          className: "page-one",
-          children: () => <p>Page One</p>
-        },
-        {
-          slug: "page-two",
-          className: "page-two",
-          children: () => <p>Page Two</p>
-        }
-      ]}
-    />
-   )
-}
+- `npm run dev`
+- `npm run lint`
+- `npm run test`
+- `npm run typecheck`
+- `npm run build`
+- `npm run preview`
 
-// Page header navigation
-const Header = () => {
-  return (
-    <Header>
-      <nav>
-        <Link href="page-one">Page One</Link>
-        <Link href="page-two">Page Two</Link>
-      </nav>
-    </Header>
-  )
-}
+## Deployment
 
-// Wrapp the aplication with the navigation Provider passing down the current page slug.
-const App = () => {
-  const slug = "[THE INITIAL RENDERED SLUG]";
+This app is intended for external static hosting on `fullpage.caferati.dev`.
 
-  return (
-    <Provider slug={slug}>
-      <Header />
-      <NavigationSlider />
-    </Provider>
-  )
-}
+Production hosting must provide SPA rewrite fallback so these URLs all serve `index.html`:
 
-```
+- `/`
+- `/page-two`
+- `/page-three`
+
+Without that rewrite behavior, direct loads to non-root routes will fail on a static host.
+
+## Notes
+
+- This app is private and is not published to npm.
+- The production build should resolve slider and button code from published `@rcaferati/*` packages only.
+- The in-app GitHub link points to the canonical repository: [rcaferati/ras-fullpage-strategies](https://github.com/rcaferati/ras-fullpage-strategies).
